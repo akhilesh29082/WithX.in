@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | WITHX Innovations</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+
+.svg-icon{
+  width:1em;
+  height:1em;
+  display:inline-block;
+  vertical-align:-0.15em;
+  flex-shrink:0;
+}
+
+.at-symbol{
+  font-weight:700;
+  line-height:1;
+  font-family:Inter,'Segoe UI',sans-serif;
+}
 
 body{
   background:
@@ -106,7 +120,14 @@ textarea{
 input:focus,
 textarea:focus{
   border-color:#38bdf8;
-  box-shadow:0 0 0 4px rgba(56,189,248,.15);
+  box-shadow:none;
+  outline:none;
+}
+
+input.field-invalid,
+textarea.field-invalid{
+  border-color:#ef4444 !important;
+  box-shadow:none !important;
 }
 
 button{
@@ -193,6 +214,8 @@ button:hover{background:#0284c7}
 }
 .call{background:#38bdf8;}
 .whatsapp{background:#25D366;}
+.float a{transition:.25s ease;}
+.float a:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 14px 30px rgba(0,0,0,.22);}
 
 @media(max-width:768px){
   .grid{grid-template-columns:1fr;}
@@ -398,6 +421,29 @@ button:hover{background:#0284c7}
 .footer-contact span{
   color:#cbd5e1;
   line-height:1.6;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.footer-contact a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-contact svg{
+  color:#38bdf8;
+  width:16px;
+  height:16px;
+  padding-top:2px;
+  flex-shrink:0;
+}
+
+.footer-contact .at-symbol{
+  color:#38bdf8;
+  font-size:16px;
+  padding-top:2px;
 }
 
 .social-links{
@@ -521,9 +567,10 @@ body{
   background:#d9d9d9;
 }
 
-.hero-divider i{
+.hero-divider svg{
   color:#B89A52;
-  font-size:13px;
+  width:13px;
+  height:13px;
 }
 
 /* GRID */
@@ -605,7 +652,8 @@ textarea{
 input:focus,
 textarea:focus{
   border-color:#bcbcbc !important;
-  box-shadow:0 0 0 3px rgba(10,25,47,.05) !important;
+  box-shadow:none !important;
+  outline:none !important;
 }
 
 textarea{
@@ -659,6 +707,12 @@ button:hover{
   background:#f1f1f1 !important;
   color:#111 !important;
   font-size:20px !important;
+  transition:.3s ease !important;
+}
+
+.contact-item:hover .icon-box{
+  background:rgba(255,255,255,.28) !important;
+  transform:scale(1.08) !important;
 }
 
 .contact-item h4{
@@ -700,7 +754,11 @@ button:hover{
 }
 
 .whatsapp-btn{
-  background:#2eaa61 !important;
+  background:#25D366 !important;
+}
+
+.whatsapp-btn:hover{
+  background:#1EBE5B !important;
 }
 
 /* SOCIAL HEADING */
@@ -1435,8 +1493,12 @@ background:var(--dark-blue)}
 }
 
 .merged-contact-card .whatsapp-btn{
-  background:#2eaa61 !important;
+  background:#25D366 !important;
   color:#fff !important;
+}
+
+.merged-contact-card .whatsapp-btn:hover{
+  background:#1EBE5B !important;
 }
 
 .merged-contact-card .social-heading span{
@@ -1597,7 +1659,7 @@ transform:translate(-50%,-50%) !important;
 font-family:var(--font-nav) !important;
 color:#000000 !important;
 text-decoration:none !important;
-font-size:16px !important;
+font-size:19px !important;
 font-weight:400 !important;
 opacity:1 !important;
 padding:0 !important;
@@ -1608,6 +1670,278 @@ margin:0 !important;
 .nav-links,.ask-btn,.top-navbar a.ask-btn{display:none !important;}
 .menu-btn{display:block !important;}
 .brand-logo-box{height:52px !important;width:180px !important;min-width:180px !important;}
+}
+
+/* =====================================================
+   MATCH INDEX PAGE NAVBAR — EXACT COPY
+===================================================== */
+.top-navbar{
+position:fixed !important;
+top:0 !important;
+left:0 !important;
+width:100% !important;
+height:80px !important;
+transform:none !important;
+display:flex !important;
+align-items:center !important;
+justify-content:space-between !important;
+padding:0 32px !important;
+background:#ffffff !important;
+color:#000000 !important;
+border-radius:0 !important;
+border:none !important;
+border-bottom:1px solid rgba(10,25,47,.06) !important;
+box-shadow:0 2px 12px rgba(10,25,47,.06) !important;
+z-index:3000 !important;
+}
+
+.nav-left{
+display:flex !important;
+align-items:center !important;
+gap:34px !important;
+flex:0 0 auto !important;
+z-index:2 !important;
+}
+
+.nav-right{
+display:flex !important;
+align-items:center !important;
+gap:20px !important;
+flex:0 0 auto !important;
+justify-content:flex-end !important;
+margin-left:auto !important;
+z-index:2 !important;
+}
+
+.brand{
+display:flex !important;
+align-items:center !important;
+gap:14px !important;
+color:#000000 !important;
+text-decoration:none !important;
+font-size:24px !important;
+font-weight:800 !important;
+letter-spacing:3px !important;
+padding:0 !important;
+margin:0 !important;
+background:transparent !important;
+border-radius:0 !important;
+}
+
+.brand-logo-box{
+height:64px !important;
+width:230px !important;
+min-width:230px !important;
+padding:0 !important;
+box-sizing:border-box !important;
+display:flex !important;
+align-items:center !important;
+justify-content:flex-start !important;
+background:transparent !important;
+border:none !important;
+border-radius:0 !important;
+box-shadow:none !important;
+overflow:hidden !important;
+}
+.brand-logo-box img,
+.top-navbar .brand img,
+nav.top-navbar .brand img{
+height:100% !important;
+width:auto !important;
+max-width:100% !important;
+display:block !important;
+object-fit:contain !important;
+object-position:left center !important;
+background:transparent !important;
+padding:0 !important;
+border-radius:0 !important;
+box-shadow:none !important;
+filter:contrast(1.18) saturate(1.1) !important;
+animation:none !important;
+transform:none !important;
+}
+
+.brand-text{
+color:#000000 !important;
+}
+
+.nav-links{
+display:flex !important;
+align-items:center !important;
+justify-content:center !important;
+gap:30px !important;
+flex-wrap:nowrap !important;
+position:absolute !important;
+left:50% !important;
+top:50% !important;
+transform:translate(-50%,-50%) !important;
+}
+
+.top-navbar a{
+font-family:var(--font-nav) !important;
+color:#000000 !important;
+text-decoration:none !important;
+font-size:16px !important;
+font-weight:400 !important;
+opacity:1 !important;
+padding:0 !important;
+margin:0 !important;
+background:transparent !important;
+border-radius:0 !important;
+line-height:1 !important;
+transition:color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease !important;
+}
+
+.top-navbar a:hover,
+.top-navbar a.active{
+color:#0A192F !important;
+}
+
+.ask-btn{
+padding:14px 26px;
+border:1px solid #0A192F;
+border-radius:999px;
+background:#0A192F;
+color:#ffffff;
+font-family:var(--font-nav);
+font-size:16px;
+font-weight:400;
+line-height:1;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+white-space:nowrap;
+}
+
+.ask-btn:hover{background:#0A192F !important;border-color:#0A192F !important;box-shadow:0 0 24px rgba(10,25,47,.35)}
+
+.top-navbar a.ask-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:14px 26px !important;
+  font-family:var(--font-nav) !important;
+  font-size:16px !important;
+  font-weight:400 !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+  border:1px solid #0A192F !important;
+  border-radius:999px !important;
+  background:#0A192F !important;
+  color:#ffffff !important;
+}
+.top-navbar a.ask-btn:hover{
+  border-color:#0A192F !important;
+  background:#0A192F !important;
+  color:#ffffff !important;
+  box-shadow:0 0 24px rgba(10,25,47,.30) !important;
+  transform:translateY(-1px) !important;
+}
+
+@media(max-width:900px){
+.top-navbar{
+    height:auto !important;
+    padding:14px 22px !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:14px !important;
+  }
+
+  .nav-left,
+  .nav-right{
+    width:100% !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:14px !important;
+  }
+
+  .brand{
+    font-size:22px !important;
+  }
+
+  .brand-logo-box{
+    height:52px !important;
+    width:180px !important;
+    min-width:180px !important;
+  }
+
+  .nav-links{
+    width:100% !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:16px 22px !important;
+  }
+
+  .top-navbar a{
+    font-size:15px !important;
+  }
+
+  .ask-btn{
+    padding:12px 22px !important;
+    height:auto !important;padding:14px 18px !important;flex-direction:row !important;align-items:center !important;
+}
+  .nav-links,.ask-btn,.nav-right>a[href="about.html"]{display:none !important}
+  .menu-btn{display:block !important; color:#000 !important;}
+  .nav-left,.nav-right{gap:18px !important; width:auto !important; flex-direction:row !important; align-items:center !important;}
+}
+
+@media (max-width: 768px){
+
+.top-navbar{
+height:52px !important;
+padding:0 18px !important;
+flex-direction:row !important;
+align-items:center !important;
+justify-content:space-between !important;
+background:#ffffff !important;
+color:#111 !important;
+}
+
+.nav-left,
+.nav-right{
+width:auto !important;
+flex-direction:row !important;
+align-items:center !important;
+gap:0 !important;
+}
+
+.brand-logo-box{
+height:46px !important;
+width:160px !important;
+min-width:160px !important;
+padding:0 !important;
+}
+
+.brand-logo-box img{
+height:100% !important;
+width:auto !important;
+}
+
+.nav-links{
+display:none !important;
+}
+
+.ask-btn{
+display:none !important;
+}
+
+.nav-right a[href="about.html"]{
+display:none !important;
+}
+}
+
+.menu-btn{display:none;background:none;border:none;font-size:30px;cursor:pointer;color:#000;padding:0;line-height:1}
+.mobile-menu{position:fixed;top:52px;left:0;width:100%;background:#fff;display:none;flex-direction:column;z-index:5000;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.mobile-menu a{padding:18px 24px;text-decoration:none;color:#111;border-bottom:1px solid #eee;font-weight:400;font-family:var(--font-nav)}
+.menu-btn{display:none;background:none;border:none;color:#0b0d10 !important;font-size:30px;cursor:pointer;padding:0;line-height:1}
+.mobile-menu{position:fixed;top:56px;left:0;width:100%;background:#ffffff;display:none;flex-direction:column;z-index:5000;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.mobile-menu a{padding:18px 24px;text-decoration:none;color:#000;border-bottom:1px solid rgba(0,0,0,.08);font-weight:400}
+.mobile-menu.show{display:flex}
+@media (max-width:768px){
+.nav-links{display:none !important}
+.ask-btn,.top-navbar a.ask-btn{display:none !important}
+.nav-right a[href="about.html"]{display:none !important}
+.menu-btn{display:block}
 }
 </style>
 </head>
@@ -1634,7 +1968,7 @@ margin:0 !important;
 <div class="hero">
     <div class="hero-title-wrap">
       <h1>Contact Us</h1>
-      <div class="hero-divider"><span></span><i class="fas fa-star"></i><span></span></div>
+      <div class="hero-divider"><span></span><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span></span></div>
     </div>
     <p>Let's build something innovative together</p>
 </div>
@@ -1648,21 +1982,21 @@ margin:0 !important;
     <div class="merged-form">
 <div class="card">
       <div class="card-heading">
-        <div class="heading-icon"><i class="fas fa-pen-to-square"></i></div>
+        <div class="heading-icon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path></svg></div>
         <div>
           <h3>Send Message</h3>
           <div class="gold-line"></div>
         </div>
       </div>
 
-      <form action="https://formsubmit.co/withx.innovations@gmail.com" method="POST">
+      <form id="contactForm" action="https://formsubmit.co/withx.innovations@gmail.com" method="POST" novalidate autocomplete="off">
         <input type="hidden" name="_subject" value="New Message from WITHX Website">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="text" name="name" placeholder="Your Name" required autocomplete="off">
+        <input type="email" name="email" placeholder="Your Email" required autocomplete="off">
+        <textarea name="message" placeholder="Your Message" required autocomplete="off"></textarea>
 
         <button type="submit">Send Message</button>
       </form>
@@ -1673,7 +2007,7 @@ margin:0 !important;
 <div class="card contact-card">
 
   <div class="card-heading">
-    <div class="heading-icon"><i class="far fa-address-card"></i></div>
+    <div class="heading-icon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="8.5" cy="10.5" r="2"></circle><path d="M5 17c0-2 1.5-3.5 3.5-3.5S12 15 12 17"></path><line x1="14.5" y1="9" x2="19" y2="9"></line><line x1="14.5" y1="13" x2="19" y2="13"></line></svg></div>
     <div>
       <h3>Contact Information</h3>
       <div class="gold-line"></div>
@@ -1686,7 +2020,7 @@ margin:0 !important;
 
   <div class="contact-item">
     <div class="icon-box">
-      <i class="fas fa-location-dot"></i>
+<svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
     </div>
 
     <div>
@@ -1698,7 +2032,7 @@ margin:0 !important;
 
   <div class="contact-item">
     <div class="icon-box">
-      <i class="fas fa-phone"></i>
+      <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
     </div>
 
     <div>
@@ -1709,7 +2043,7 @@ margin:0 !important;
 
   <div class="contact-item">
     <div class="icon-box">
-      <i class="fas fa-envelope"></i>
+      <span class="at-symbol">@</span>
     </div>
 
     <div>
@@ -1720,7 +2054,7 @@ margin:0 !important;
 
   <div class="action-buttons">
     <a href="tel:+919067936323" class="call-btn">
-      <i class="fas fa-phone"></i>
+      <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
       Call Now
     </a>
 
@@ -1728,35 +2062,11 @@ margin:0 !important;
        class="whatsapp-btn"
        target="_blank">
 
-       <i class="fab fa-whatsapp"></i>
+       <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
        WhatsApp
     </a>
   </div>
 
-  <div class="social-heading">
-    <span></span>
-    <strong>Connect With Us</strong>
-    <span></span>
-  </div>
-
-  <div class="social-icons">
-
-    <a href="https://www.linkedin.com/company/withx-innovations/"
-       target="_blank">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-
-    <a href="https://www.instagram.com/withx.in?igsh=MWJuNDR4dmxiZDJh"
-       target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-
-    <a href="https://youtube.com/@withxinnovation?si=sRdB0OaLzHoDtcV5"
-       target="_blank">
-      <i class="fab fa-youtube"></i>
-    </a>
-
-  </div>
 
 </div>
     </div>
@@ -1790,13 +2100,6 @@ margin:0 !important;
  
 
 
-<!-- FLOAT BUTTONS -->
-<div class="float">
-  <a href="tel:+919067936323" class="call">📞</a>
-  <a href="https://wa.me/919067936323" class="whatsapp" target="_blank">💬</a>
-</div>
-
-
 
 
 <footer class="footer">
@@ -1818,7 +2121,6 @@ industrial design, product innovation and advanced technology development.
 <a href="about.html">About Us</a>
 <a href="services.html">Services</a>
 <a href="products.html">Products</a>
-<a href="projects.html">Projects</a>
 <a href="research.html">Research</a>
 <a href="contact.html">Contact</a>
 </div>
@@ -1827,17 +2129,18 @@ industrial design, product innovation and advanced technology development.
 <div class="footer-box">
 <h4>Contact</h4>
 <div class="footer-contact">
-<span> EDF MITAoE, Dehu Phata, Alandi (D), Pune, Maharashtra</span>
-<span> WITHX Innovations Pvt. Ltd.</span>
+<span>EDF MITAoE, Dehu Phata, Alandi (D), Pune, Maharashtra</span>
+<span>WITHX Innovations Pvt. Ltd.</span>
+<span><a href="tel:+919067936323">+91 90679 36323</a></span>
 
 <a href="mailto:withx.innovations@gmail.com">
-✉ withx.innovations@gmail.com
+withx.innovations@gmail.com
 </a>
 
 <div class="social-links">
 <a href="https://www.linkedin.com/company/withx-innovations/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg></a>
 <a href="https://www.instagram.com/withx.in" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39C1.35 2.68.94 3.35.63 4.14c-.3.76-.5 1.64-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
-<a href="https://youtube.com/@withxinnovation" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.13C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.13C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.13A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+<a href="https://youtube.com/@withxinnovations" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.13C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.13C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.13A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
 </div>
 </div>
 </div>
@@ -1850,6 +2153,29 @@ industrial design, product innovation and advanced technology development.
 
 </footer>
 <script>
+const contactForm=document.getElementById('contactForm');
+if(contactForm){
+  const clearInvalid=(el)=>el.classList.remove('field-invalid');
+  contactForm.querySelectorAll('input,textarea').forEach((el)=>{
+    el.addEventListener('input',()=>clearInvalid(el));
+  });
+  contactForm.addEventListener('submit',(e)=>{
+    let firstInvalid=null;
+    contactForm.querySelectorAll('input,textarea').forEach((el)=>{
+      if(!el.checkValidity()){
+        el.classList.add('field-invalid');
+        if(!firstInvalid) firstInvalid=el;
+      } else {
+        clearInvalid(el);
+      }
+    });
+    if(firstInvalid){
+      e.preventDefault();
+      firstInvalid.focus();
+    }
+  });
+}
+
 const menuBtn=document.getElementById('menuBtn');
 const mobileMenu=document.getElementById('mobileMenu');
 if(menuBtn && mobileMenu){
